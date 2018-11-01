@@ -1,0 +1,18 @@
+{
+	"APP": {
+		"NOME": "SpaceX Mobile"
+    },
+    "ALERT": {
+		"BOTOES": {
+			"BOTAO_OK": "Ok",
+			"BOTAO_NAO": "Não",
+			"BOTAO_SIM": "Sim",
+			"BOTAO_CANCELAR": "Cancelar",
+			"BOTAO_TENTAR_NOVAMENTE": "Tentar novamente"
+		}
+	},
+	"LOADING": {
+		"CARREGANDO": "Carregando..."
+	}
+
+}
