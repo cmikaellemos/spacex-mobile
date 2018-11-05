@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'LANCAMENTO.TITULO' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<card-lancamento has-header [data]="lancamentos"></card-lancamento>

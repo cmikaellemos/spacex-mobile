@@ -1,3 +1,4 @@
+import { ENV } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 
 import { 
@@ -10,6 +11,7 @@ import {
 export class ApiProvider {
 
 	private httpHeader: HttpHeaders;
+	private baseUrl = ENV.baseUrl;
 
 	constructor(private http: HttpClient) {
 		this.httpHeader = new HttpHeaders({
@@ -19,10 +21,10 @@ export class ApiProvider {
 	}
 
 	get(url: string, parametros?: HttpParams) {
-		return this.http.get(url, { headers: this.httpHeader, params: parametros }).toPromise();
+		return this.http.get( this.baseUrl + url, { headers: this.httpHeader, params: parametros }).toPromise();
 	}
 	
 	post(url: string, data: any): Promise<any> {
-		return this.http.post(url, JSON.stringify(data), {headers: this.httpHeader}).toPromise();
+		return this.http.post( this.baseUrl + url, JSON.stringify(data), {headers: this.httpHeader}).toPromise();
 	}
 }

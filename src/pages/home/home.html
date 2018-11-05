@@ -3,16 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ 'MENU.INICIO' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3 style="text-align: center">{{ 'INICIO.TITULO' | translate}}</h3>
+  <ion-grid no-padding *ngIf="lancamentos != null">
+    <ion-row card-background-page>
+      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 *ngFor="let item of lancamentos;let i = index">
+        <ion-card text-left>
+          <ion-card-content>
+            <ion-card-title no-padding>
+              <h2 card-title>{{ item.mission_name }}</h2>
+            </ion-card-title>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+            <h3 card-subtitle>{{ item.launch_date_local | date:'medium' }}</h3>
+            <h3 card-subtitle>{{ item.rocket.rocket_name }}</h3>
+            <h3 card-subtitle>{{ item.launch_site.site_name_long }}</h3>
+            <p card-body-text>{{ item.details }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

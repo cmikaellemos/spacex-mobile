@@ -1,5 +1,7 @@
 {
   "name": "spacex-mobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

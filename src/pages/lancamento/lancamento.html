@@ -1,0 +1,86 @@
+<!--
+  Generated template for the LancamentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ lancamento ? lancamento.mission_name : '' }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="lancamento">
+
+  <div class="container" *ngIf="lancamento.links.flickr_images.length > 0">
+    <div class="slide">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let image of lancamento.links.flickr_images">
+          <img class="image" [src]="image"/>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item no-lines>
+          <h1 parallax-title>{{lancamento.mission_name}}</h1>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <ion-item no-margin padding-right>
+          <div info>
+            <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.ANO' | translate }}</span>
+            <br/>
+            <p item-subtitle>{{lancamento.launch_year}}</p>
+          </div>
+          <div info>
+            <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.LOCAL' | translate }}</span>
+            <br/>
+            <p item-subtitle>{{lancamento.launch_site.site_name_long}}</p>
+          </div>
+          <div info>
+            <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.SUCESSO' | translate }}</span>
+            <br/>
+            <p item-subtitle>{{lancamento.launch_success ? "Sim" : "Não"}}</p>
+          </div>
+        </ion-item>
+        
+        <ion-item no-margin padding-right>
+          <div info>
+            <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.FOGUETE' | translate }}</span>
+            <p item-subtitle>{{lancamento.rocket.rocket_name}}</p>
+          </div>
+          <br/>
+          <div *ngFor="let payload of lancamento.rocket.second_stage.payloads">
+            <div info>
+              <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.CARGA' | translate }}</span>
+              <p item-subtitle>{{payload.payload_type}}</p>
+            </div>
+            <div info>
+              <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.NACIONALIDADE' | translate }}</span>
+              <p item-subtitle>{{payload.nationality}}</p>
+            </div>
+            <div info>
+              <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.FABRICANTE' | translate }}</span>
+              <p item-subtitle>{{payload.manufacturer}}</p>
+            </div>
+            <div info>
+              <span item-subtitle float-left margin-right>{{ 'LANCAMENTO.INFO.PESO' | translate }}</span>
+              <p item-subtitle>{{payload.payload_mass_kg}} Kg</p>
+            </div>
+            <br/>
+          </div>
+        </ion-item>
+
+        <ion-item text-wrap no-margin padding-right>
+          <h3 item-subtitle>{{lancamento.details}}</h3>
+        </ion-item>
+        
+        <button ion-button full clear danger (click)="verVideo()">{{ 'LANCAMENTO.INFO.VIDEO' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

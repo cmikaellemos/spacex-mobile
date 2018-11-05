@@ -1,4 +1,11 @@
-page-home {
+card-lancamento {
+
+    [card-img] {
+        width: 130px;
+        height: 130px;
+        margin: 5px;
+        position: relative;
+    }
 
     [card-title] {
         line-height: normal !important;
@@ -12,5 +19,4 @@ page-home {
         padding-top: 20px;
         margin-bottom: 10px;
     }
-
 }

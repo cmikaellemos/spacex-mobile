@@ -1,0 +1,23 @@
+<ion-content style="margin-top: 56px; margin-bottom: 56px">
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row card-background-page>
+      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 *ngFor="let item of data;let i = index">
+            <ion-card (click)="verLancamento(item.flight_number)" text-left>
+              <!--Card-image-->
+              <div item-start float-left card-img>
+                <img [src]="item.links.mission_patch" />
+              </div>
+              <ion-card-content>
+                <ion-card-title no-padding>
+                  <h2 card-title>{{ item.mission_name }}</h2>
+                </ion-card-title>
+
+                <h3 card-subtitle>{{ item.rocket.rocket_name }}</h3>
+                <h3 card-subtitle>{{ item.launch_year }}</h3>
+                <p card-body-text>{{ item.launch_site.site_name_long }}</p>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

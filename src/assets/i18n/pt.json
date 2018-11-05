@@ -1,8 +1,8 @@
 {
 	"APP": {
 		"NOME": "SpaceX Mobile"
-    },
-    "ALERT": {
+  },
+  "ALERT": {
 		"BOTOES": {
 			"BOTAO_OK": "Ok",
 			"BOTAO_NAO": "Não",
@@ -13,6 +13,26 @@
 	},
 	"LOADING": {
 		"CARREGANDO": "Carregando..."
+	},
+	"MENU": {
+		"INICIO": "Início",
+		"LANCAMENTOS": "Lançamentos"
+	},
+	"LANCAMENTO": {
+		"TITULO": "Lançamentos",
+		"INFO":{
+			"ANO": "Ano de Lançamento",
+			"LOCAL": "Local de Lançamento",
+			"SUCESSO": "Lançado com Sucesso",
+			"FOGUETE": "Foguete",
+			"CARGA": "Carga",
+			"NACIONALIDADE": "Nacionalidade",
+			"FABRICANTE": "Fabricante",
+			"PESO": "Peso",
+			"VIDEO": "Ver vídeo"
+		}
+	},
+	"INICIO":{
+		"TITULO": "Próximos lançamentos"
 	}
-
 }
